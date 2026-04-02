@@ -13,7 +13,6 @@
         .hero-title { font-family: 'Dela Gothic One', sans-serif; }
         .days-num { font-family: 'Playfair Display', serif; }
         
-        /* 呼吸動畫 */
         @keyframes pulse-red {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.05); }
@@ -37,23 +36,23 @@
         </div>
     </nav>
 
-    <header class="max-w-4xl mx-auto px-4 mb-12 mt-4 md:mt-8">
-        <div class="bg-white p-8 md:p-20 rounded-[2rem] shadow-xl text-center border-4 border-[#BAE6FD]">
+    <header class="max-w-2xl mx-auto px-6 mb-10 mt-4">
+        <div class="bg-white p-6 md:p-10 rounded-[2rem] shadow-lg text-center border-4 border-[#BAE6FD]">
             
-            <h1 class="hero-title text-5xl md:text-8xl text-[#FF8A8A] mb-8 md:mb-12">LOVE</h1>
+            <h1 class="hero-title text-4xl md:text-6xl text-[#FF8A8A] mb-4 md:mb-6">LOVE</h1>
             
             <div class="flex flex-col items-center">
-                <span id="days" class="days-num text-7xl md:text-9xl text-gray-800 font-bold pulse-text">000</span>
-                <p class="hero-title text-lg md:text-xl mt-4 text-gray-400 tracking-widest uppercase">Days</p>
+                <span id="days" class="days-num text-6xl md:text-8xl text-gray-800 font-bold pulse-text">000</span>
+                <p class="hero-title text-sm md:text-base mt-2 text-gray-400 tracking-widest uppercase">Days</p>
             </div>
 
-            <p class="mt-12 md:mt-16 text-sm md:text-lg text-gray-400 font-medium tracking-wide px-2">
+            <p class="mt-8 md:mt-10 text-xs md:text-sm text-gray-400 font-medium tracking-wide">
                 Since 2026.04.02 — 這是我們故事
             </p>
         </div>
     </header>
 
-    <section class="max-w-4xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 pb-20">
+    <section class="max-w-4xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 pb-20">
         
         <div class="group cursor-pointer bg-white rounded-3xl shadow-lg overflow-hidden border-2 border-transparent hover:border-[#BAE6FD] transition duration-300" onclick="location.href='Album.html'">
             <div class="aspect-[16/9] overflow-hidden">
@@ -90,11 +89,10 @@
             const now = new Date().getTime();
             const distance = now - startDate;
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            // 讓天數至少顯示兩位數，例如 01, 05
             document.getElementById("days").innerText = days < 10 ? "0" + days : days;
         }
         updateTimer();
-        setInterval(updateTimer, 3600000); // 每一小時更新一次天數即可
+        setInterval(updateTimer, 3600000);
     </script>
 </body>
 </html>
