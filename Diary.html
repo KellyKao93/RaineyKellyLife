@@ -16,12 +16,12 @@
         .diary-card { transition: all 0.3s ease; }
         .diary-card:hover { transform: translateY(-5px); }
 
-        /* 初始遮罩層樣式 */
+        /* 全螢幕心動遮罩樣式 */
         #welcome-overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background-color: rgba(254, 253, 245, 0.85); /* 奶油色半透明 */
-            backdrop-filter: blur(8px); /* 磨砂玻璃感 */
+            background-color: rgba(254, 253, 245, 0.9); /* 較不透明的奶油色 */
+            backdrop-filter: blur(10px); /* 加強磨砂感 */
             z-index: 100;
             display: flex;
             justify-content: center;
@@ -32,13 +32,16 @@
 
         .overlay-content {
             text-align: center;
-            max-width: 500px;
-            padding: 20px;
+            max-width: 600px;
+            padding: 40px 20px;
             animation: fadeInScale 1.2s ease-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         @keyframes fadeInScale {
-            0% { opacity: 0; transform: scale(0.95); }
+            0% { opacity: 0; transform: scale(0.9); }
             100% { opacity: 1; transform: scale(1); }
         }
 
@@ -69,14 +72,24 @@
 
     <div id="welcome-overlay" onclick="hideOverlay()">
         <div class="overlay-content">
-            <h2 class="hero-title text-3xl md:text-4xl text-[#FF8A8A] mb-6">還是會不自覺臉紅</h2>
-            <p class="text-gray-600 leading-relaxed mb-10 text-base md:text-lg px-4">
+            <h2 class="hero-title text-3xl md:text-4xl text-[#FF8A8A] mb-4">還是會不自覺臉紅</h2>
+            
+            <p class="text-gray-600 leading-relaxed mb-8 text-base md:text-lg">
                 書瑀，今天看到妳時，我真的很緊張，<br>
                 因為我很怕妳會拒絕我，<br>
                 雖然我表面很冷靜，但內心其實尖叫很大聲...
             </p>
-            <div class="inline-block px-8 py-3 bg-[#FF8A8A] text-white rounded-full shadow-lg text-sm tracking-widest animate-pulse">
-                點擊後開始我們的下一章 ✨
+
+            <div class="mb-4 p-4 bg-white rounded-3xl shadow-xl border-2 border-pink-100">
+                <img src="QRCode.png" alt="QR Code" class="w-48 h-48 md:w-56 md:h-56 object-cover rounded-xl">
+            </div>
+            
+            <p class="text-sm text-[#FF8A8A] italic mb-10 tracking-widest">
+                掃描上面的 QRCode，我有話想對妳說 💌
+            </p>
+
+            <div class="inline-block px-10 py-3 bg-[#FF8A8A] text-white rounded-full shadow-lg text-sm tracking-widest animate-pulse">
+                點擊任意處開始我們的下一章 ✨
             </div>
         </div>
     </div>
@@ -150,22 +163,23 @@
     </footer>
 
     <script>
-        // 隱藏進入遮罩層
         function hideOverlay() {
             const overlay = document.getElementById('welcome-overlay');
             overlay.style.opacity = '0';
             setTimeout(() => {
                 overlay.style.visibility = 'hidden';
-            }, 800); // 對應 CSS 的 transition 時間
+            }, 800);
         }
 
-        // QRCode 放大邏輯
         function openModal(imgSrc) {
-            const modal = document.getElementById('imgModal');
-            const modalImg = document.getElementById('modalImg');
-            modalImg.src = imgSrc;
-            modal.style.display = 'flex';
-            setTimeout(() => modal.classList.add('active'), 10);
+            // 只有在遮罩層隱藏後才能觸發圖片放大
+            if (document.getElementById('welcome-overlay').style.visibility === 'hidden') {
+                const modal = document.getElementById('imgModal');
+                const modalImg = document.getElementById('modalImg');
+                modalImg.src = imgSrc;
+                modal.style.display = 'flex';
+                setTimeout(() => modal.classList.add('active'), 10);
+            }
         }
 
         function closeModal() {
