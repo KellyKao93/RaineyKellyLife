@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story | 生活紀錄</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,700&family=Noto+Sans+TC:wght@300;400&display=swap');
+        body { font-family: 'Noto Sans TC', sans-serif; }
+        h1, h2 { font-family: 'Playfair Display', serif; }
+        .hero-bg {
+            /* 這裡之後可以替換成你們的閃照網址 */
+            background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1516589174184-c68526516280?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-[#F9F9F7] text-[#333]">
+
+    <nav class="flex justify-between items-center px-10 py-8 uppercase tracking-widest text-sm">
+        <div class="font-bold text-lg italic">The Archive.</div>
+        <div class="space-x-8">
+            <a href="index.html" class="border-b border-black">Home</a>
+            <a href="moments.html" class="hover:text-gray-500 transition">Moments (照片)</a>
+            <a href="journal.html" class="hover:text-gray-500 transition">Journal (紀錄)</a>
+        </div>
+    </nav>
+
+    <header class="max-w-7xl mx-auto px-6 mb-20">
+        <div class="hero-bg h-[70vh] flex flex-col items-center justify-center text-white shadow-2xl">
+            <h1 class="text-7xl md:text-9xl mb-4 italic">Love & Daily</h1>
+            <p class="text-lg tracking-[0.3em] font-light">紀錄關於我們心跳加速的每一瞬間</p>
+        </div>
+    </header>
+
+    <section class="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 pb-24">
+        
+        <div class="group cursor-pointer" onclick="location.href='moments.html'">
+            <div class="overflow-hidden bg-gray-200 aspect-[4/5] mb-6">
+                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80" 
+                     class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition duration-700">
+            </div>
+            <h2 class="text-3xl mb-2">Our Moments</h2>
+            <p class="text-gray-500 mb-4">那些被快門留下的瞬間，從爬山到每一場馬拉松。</p>
+            <button class="border-b-2 border-black pb-1 text-sm font-bold tracking-wider">VIEW PHOTO ALBUM</button>
+        </div>
+
+        <div class="group cursor-pointer" onclick="location.href='journal.html'">
+            <div class="overflow-hidden bg-gray-200 aspect-[4/5] mb-6">
+                <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=80" 
+                     class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition duration-700">
+            </div>
+            <h2 class="text-3xl mb-2">Daily Journal</h2>
+            <p class="text-gray-500 mb-4">文字是有溫度的，紀錄那些害羞得說不出口的話。</p>
+            <button class="border-b-2 border-black pb-1 text-sm font-bold tracking-wider">READ STORIES</button>
+        </div>
+
+    </section>
+
+    <footer class="py-12 border-t border-gray-200 text-center text-xs tracking-widest text-gray-400">
+        &copy; 2026 DESIGNED BY Y.H. KAO | MADE WITH LOVE
+    </footer>
+
+</body>
+</html>
