@@ -17,28 +17,27 @@
         .slider-container {
             display: flex;
             overflow-x: auto;
-            scroll-snap-type: x mandatory; /* 強制對齊 */
+            scroll-snap-type: x mandatory;
             scroll-behavior: smooth;
             -webkit-overflow-scrolling: touch;
             padding-bottom: 20px;
         }
-        /* 隱藏捲軸但保留功能 */
         .slider-container::-webkit-scrollbar { display: none; }
         
         .photo-card {
-            scroll-snap-align: center; /* 滑動時停在中間 */
-            flex: 0 0 85%; /* 手機版顯示寬度 85% */
+            scroll-snap-align: center;
+            flex: 0 0 85%;
             margin: 0 10px;
         }
 
         @media (min-width: 768px) {
-            .photo-card { flex: 0 0 400px; } /* 電腦版固定寬度 */
+            .photo-card { flex: 0 0 400px; }
         }
     </style>
 </head>
 <body class="text-gray-800">
 
-    <nav class="flex flex-col md:flex-row justify-between items-center px-6 md:px-10 py-6 gap-4">
+    <nav class="flex flex-col md:flex-row justify-between items-center px-6 md:px-10 py-6 gap-2 md:gap-4">
         <div class="font-bold text-xl md:text-2xl text-[#FF8A8A] italic">
             Rainey and Kelly Story.
         </div>
@@ -49,14 +48,10 @@
         </div>
     </nav>
 
-    <header class="max-w-4xl mx-auto px-4 mb-8 mt-4 text-center">
-        <div class="bg-white p-8 md:p-12 rounded-[2rem] shadow-lg border-4 border-[#BAE6FD]">
-            <h1 class="hero-title text-4xl md:text-6xl text-[#BAE6FD] mb-2">ALBUM</h1>
-            <p class="date-font text-[#FF8A8A] text-xl md:text-2xl font-bold mb-4">2026.03.11 - 2026.04.05</p>
-            <p class="text-gray-400 tracking-widest text-sm font-medium px-4">
-                集結了我們所有臉紅心跳的瞬間 ✨<br>
-                <span class="text-xs mt-2 block">(左右滑動查看照片)</span>
-            </p>
+    <header class="max-w-2xl mx-auto px-4 mb-6 mt-2 text-center">
+        <div class="bg-white p-4 md:p-8 rounded-[2rem] shadow-md border-4 border-[#BAE6FD]">
+            <h1 class="hero-title text-3xl md:text-5xl text-[#BAE6FD] mb-1">ALBUM 1</h1>
+            <p class="date-font text-[#FF8A8A] text-lg md:text-xl font-bold">2026.03.11 - 2026.04.05</p>
         </div>
     </header>
 
@@ -65,23 +60,19 @@
             </div>
     </main>
 
-    <footer class="py-8 bg-white text-center text-[10px] tracking-widest text-gray-400 rounded-t-[2rem] mt-10">
+    <footer class="py-8 bg-white text-center text-[10px] tracking-widest text-gray-400 rounded-t-[2rem] mt-6">
         ❤️ 我們的小日常 ✨ <br>
         &copy; 2026 Rainey and Kelly. 保留所有權利。
     </footer>
 
     <script>
-        // --- 設定區 ---
-        const totalPhotos = 100; // 你預計上傳的照片總張數上限
+        const totalPhotos = 100;
         const slider = document.getElementById('photo-slider');
 
-        // 自動產生照片卡片
         for (let i = 1; i <= totalPhotos; i++) {
             const card = document.createElement('div');
             card.className = 'photo-card bg-white p-4 rounded-3xl shadow-md border-2 border-[#FEFDF5] hover:border-[#FF8A8A] transition-all';
             
-            // 這裡假設你的照片檔名是 1.jpg, 2.jpg...
-            // loading="lazy" 可以讓網頁載入更快，滑到哪才載到哪
             card.innerHTML = `
                 <div class="aspect-[3/4] overflow-hidden rounded-2xl mb-4 bg-gray-100">
                     <img src="${i}.jpg" 
@@ -95,9 +86,6 @@
             `;
             slider.appendChild(card);
         }
-
-        // 腳本備註：onerror 的那行 code，是為了讓你如果還沒傳滿 100 張，
-        // 網頁會自動隱藏找不到檔案的空白格子，非常方便！
     </script>
 </body>
 </html>
