@@ -3,130 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Together | 我們的小世界</title>
+    <title>Our Love | 貓貓狗狗紀錄</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* 引入更活潑的字體：Dela Gothic One (日系可愛風標題) and Noto Sans TC */
-        @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Noto+Sans+TC:wght@400;500;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap');
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: #FEFDF5; }
         
-        body { font-family: 'Noto Sans TC', sans-serif; }
-        h1, .timer-label { font-family: 'Dela Gothic One', sans-serif; }
-        .timer-num { font-family: 'Dela Gothic One', sans-serif; }
-
-        /* 秒數跳動動畫 */
-        @keyframes pulse-red {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.8; transform: scale(1.05); }
-        }
-        .pulse-sec {
-            animation: pulse-red 1s infinite;
+        /* 模仿圖片的深色卡片背景 */
+        .widget-card {
+            background-color: #33312E; /* 深咖啡灰色 */
+            border-radius: 2.5rem;
+            position: relative;
+            overflow: hidden;
         }
 
-        /* 奶油黃背景 */
-        body { background-color: #FEFDF5; }
+        /* 數字字體稍微大一點、清晰一點 */
+        .timer-num {
+            font-size: 5rem;
+            line-height: 1;
+            font-weight: 700;
+            color: #FFFFFF;
+        }
+
+        /* 讓貓狗有一點點浮動的感覺 */
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-float {
+            animation: floating 3s ease-in-out infinite;
+        }
     </style>
 </head>
-<body class="text-gray-800">
+<body class="p-4 md:p-10">
 
-    <nav class="flex justify-between items-center px-8 py-6 tracking-wide text-md">
-        <div class="font-bold text-2xl text-[#FF8A8A] flex items-center">
-            <span>❤️ Our Love</span>
-        </div>
-        <div class="space-x-4 flex">
-            <a href="index.html" class="px-4 py-2 bg-[#FF8A8A] text-white rounded-full text-sm shadow-md">Home</a>
-            <a href="moments.html" class="px-4 py-2 hover:bg-pink-100 rounded-full text-sm transition text-gray-600">Moments</a>
-            <a href="journal.html" class="px-4 py-2 hover:bg-pink-100 rounded-full text-sm transition text-gray-600">Journal</a>
+    <nav class="max-w-4xl mx-auto flex justify-between items-center mb-10 px-4">
+        <div class="text-xl font-bold text-gray-700">🐾 Home</div>
+        <div class="space-x-4">
+            <a href="moments.html" class="text-gray-400 hover:text-orange-400 transition">Moments</a>
+            <a href="journal.html" class="text-gray-400 hover:text-orange-400 transition">Journal</a>
         </div>
     </nav>
 
-    <header class="max-w-6xl mx-auto px-6 mb-16 mt-8">
-        <div class="bg-white p-10 md:p-16 rounded-[2rem] shadow-xl text-center border-4 border-[#BAE6FD]">
+    <header class="max-w-2xl mx-auto">
+        <div class="widget-card p-10 md:p-16 text-center shadow-2xl flex items-center justify-between">
             
-            <h1 class="text-4xl md:text-5xl mb-12 text-[#333]">💖 我們在一起...</h1>
-            
-            <div class="flex flex-wrap justify-center gap-6 md:gap-10 text-center">
-                <div class="flex flex-col items-center">
-                    <div class="w-28 h-28 md:w-36 md:h-36 bg-[#BAE6FD] text-white rounded-full flex items-center justify-center shadow-lg border-4 border-white">
-                        <span id="days" class="timer-num text-5xl md:text-6xl">00</span>
-                    </div>
-                    <p class="timer-label text-sm mt-3 text-gray-500 tracking-wider">Days</p>
-                </div>
-                <div class="flex flex-col items-center">
-                    <div class="w-28 h-28 md:w-36 md:h-36 bg-[#FBCFE8] text-white rounded-full flex items-center justify-center shadow-lg border-4 border-white">
-                        <span id="hours" class="timer-num text-5xl md:text-6xl">00</span>
-                    </div>
-                    <p class="timer-label text-sm mt-3 text-gray-500 tracking-wider">Hours</p>
-                </div>
-                <div class="flex flex-col items-center">
-                    <div class="w-28 h-28 md:w-36 md:h-36 bg-[#A7F3D0] text-white rounded-full flex items-center justify-center shadow-lg border-4 border-white">
-                        <span id="minutes" class="timer-num text-5xl md:text-6xl">00</span>
-                    </div>
-                    <p class="timer-label text-sm mt-3 text-gray-500 tracking-wider">Mins</p>
-                </div>
-                <div class="flex flex-col items-center">
-                    <div class="w-28 h-28 md:w-36 md:h-36 bg-[#FF8A8A] text-white rounded-full flex items-center justify-center shadow-lg border-4 border-white pulse-sec">
-                        <span id="seconds" class="timer-num text-5xl md:text-6xl">00</span>
-                    </div>
-                    <p class="timer-label text-sm mt-3 text-[#FF8A8A] tracking-wider font-bold">Secs</p>
+            <div class="animate-float" style="font-size: 80px;">
+                🐱
+                <div class="text-xs text-white opacity-60 mt-2">Meow!</div>
+            </div>
+
+            <div class="flex-1 px-4">
+                <p class="text-white text-lg tracking-[0.5em] mb-2 font-light">LOVE</p>
+                <div id="days-counter" class="timer-num">1</div>
+                <p class="text-white text-sm mt-2 opacity-80">天</p>
+                <div class="mt-6 border-t border-gray-600 pt-4">
+                    <p class="text-white text-sm tracking-widest opacity-60">2026 / 04 / 02</p>
                 </div>
             </div>
 
-            <p class="mt-12 text-md text-gray-400 font-medium">Since 2026.04.02 — 這是我們故事的開始 ✨</p>
+            <div class="animate-float" style="animation-delay: 0.5s; font-size: 80px;">
+                🐶
+                <div class="text-xs text-white opacity-60 mt-2">Woof!</div>
+            </div>
+
         </div>
     </header>
 
-    <section class="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10 pb-20">
-        
-        <div class="group cursor-pointer bg-white rounded-3xl shadow-lg overflow-hidden border-2 border-transparent hover:border-[#BAE6FD] hover:shadow-2xl transition duration-300" onclick="location.href='moments.html'">
-            <div class="aspect-[16/10] overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80" 
-                     class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+    <section class="max-w-4xl mx-auto mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 pb-20">
+        <div class="group cursor-pointer bg-white rounded-3xl p-6 shadow-md border-2 border-transparent hover:border-orange-200 transition" onclick="location.href='moments.html'">
+            <div class="rounded-2xl overflow-hidden h-40 bg-gray-100 mb-4">
+                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
             </div>
-            <div class="p-6 text-center">
-                <h2 class="timer-label text-2xl text-[#0369A1] mb-2">Moments 閃照區</h2>
-                <p class="text-gray-500 text-sm mb-4">紀錄每一場爬山與馬拉松的汗水</p>
-                <span class="inline-block bg-[#BAE6FD] text-[#0369A1] px-6 py-2 rounded-full text-xs font-bold shadow">Go check!</span>
-            </div>
+            <h3 class="text-xl font-bold text-center text-gray-700">作品與照片集</h3>
         </div>
 
-        <div class="group cursor-pointer bg-white rounded-3xl shadow-lg overflow-hidden border-2 border-transparent hover:border-[#FBCFE8] hover:shadow-2xl transition duration-300" onclick="location.href='journal.html'">
-            <div class="aspect-[16/10] overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=80" 
-                     class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        <div class="group cursor-pointer bg-white rounded-3xl p-6 shadow-md border-2 border-transparent hover:border-orange-200 transition" onclick="location.href='journal.html'">
+            <div class="rounded-2xl overflow-hidden h-40 bg-gray-100 mb-4">
+                <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
             </div>
-            <div class="p-6 text-center">
-                <h2 class="timer-label text-2xl text-[#9D174D] mb-2">Journal 心跳聲</h2>
-                <p class="text-gray-500 text-sm mb-4">那些說不出口、讓我臉紅的話</p>
-                <span class="inline-block bg-[#FBCFE8] text-[#9D174D] px-6 py-2 rounded-full text-xs font-bold shadow">Go read!</span>
-            </div>
+            <h3 class="text-xl font-bold text-center text-gray-700">心跳生活紀錄</h3>
         </div>
-
     </section>
 
-    <footer class="py-10 border-t border-gray-100 bg-white text-center text-xs tracking-widest text-gray-400 rounded-t-[2rem]">
-        ❤️ 我們的小日常 紀錄網頁 ✨
-    </footer>
-
     <script>
-        const startDate = new Date("2026-04-02T00:00:00").getTime();
-
-        function updateTimer() {
-            const now = new Date().getTime();
-            const distance = now - startDate;
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
-            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
-            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
-            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+        // 計算天數：今天 2026-04-02 是第一天
+        const startDate = new Date("2026-04-02T00:00:00");
+        
+        function updateCounter() {
+            const now = new Date();
+            // 計算相差的毫秒數
+            const diffTime = now - startDate;
+            // 轉換為天數，並無條件進位（因為今天算第1天）
+            // 如果是 0.1 天，也會變成 1 天
+            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)) + 1;
+            
+            document.getElementById("days-counter").innerText = diffDays;
         }
 
-        setInterval(updateTimer, 1000);
-        updateTimer();
+        updateCounter();
+        // 每天凌晨自動更新一次（雖然開網頁就會更新，但放著不關也會更新）
+        setInterval(updateCounter, 3600000);
     </script>
 </body>
 </html>
