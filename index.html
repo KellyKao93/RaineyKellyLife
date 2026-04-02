@@ -1,195 +1,95 @@
 <!DOCTYPE html>
-
 <html lang="zh-TW">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>LOVE STORY | 生活紀錄</title>
-
     <script src="https://cdn.tailwindcss.com"></script>
-
     <style>
-
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,700&family=Noto+Sans+TC:wght@400;500;700&display=swap');
-
         @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
-
         
-
         body { font-family: 'Noto Sans TC', sans-serif; background-color: #FEFDF5; }
-
         .hero-title { font-family: 'Dela Gothic One', sans-serif; }
-
         .days-num { font-family: 'Playfair Display', serif; }
-
         
-
         @keyframes pulse-red {
-
             0%, 100% { transform: scale(1); }
-
             50% { transform: scale(1.05); }
-
         }
-
         .pulse-text {
-
             animation: pulse-red 2s infinite;
-
             display: inline-block;
-
         }
-
     </style>
-
 </head>
-
 <body class="text-gray-800">
 
-
-
     <nav class="flex flex-col md:flex-row justify-between items-center px-6 md:px-10 py-6 gap-4">
-
         <div class="font-bold text-xl md:text-2xl text-[#FF8A8A] italic">
-
             Rainey and Kelly Story.
-
         </div>
-
         <div class="flex space-x-2 md:space-x-4">
-
             <a href="index.html" class="px-4 md:px-6 py-2 bg-[#FF8A8A] text-white rounded-full text-xs md:text-sm shadow-md font-medium">Home</a>
-
             <a href="Album.html" class="px-4 md:px-6 py-2 hover:bg-pink-100 rounded-full text-xs md:text-sm transition text-gray-600 font-medium">Album </a>
-
             <a href="Diary.html" class="px-4 md:px-6 py-2 hover:bg-pink-100 rounded-full text-xs md:text-sm transition text-gray-600 font-medium">Diary </a>
-
         </div>
-
     </nav>
 
-
-
     <header class="max-w-2xl mx-auto px-6 mb-10 mt-4">
-
         <div class="bg-white p-6 md:p-10 rounded-[2rem] shadow-lg text-center border-4 border-[#BAE6FD]">
-
-            
-
             <h1 class="hero-title text-4xl md:text-6xl text-[#FF8A8A] mb-4 md:mb-6">LOVE</h1>
-
-            
-
             <div class="flex flex-col items-center">
-
                 <span id="days" class="days-num text-6xl md:text-8xl text-gray-800 font-bold pulse-text">000</span>
-
                 <p class="hero-title text-sm md:text-base mt-2 text-gray-400 tracking-widest uppercase">Days</p>
-
             </div>
-
-
-
             <p class="mt-8 md:mt-10 text-xs md:text-sm text-gray-400 font-medium tracking-wide">
-
                 Since 2026.04.02 — 這是我們故事
-
             </p>
-
         </div>
-
     </header>
 
-
-
     <section class="max-w-4xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 pb-20">
-
         
-
         <div class="group cursor-pointer bg-white rounded-3xl shadow-lg overflow-hidden border-2 border-transparent hover:border-[#BAE6FD] transition duration-300" onclick="location.href='Album.html'">
-
-            <div class="aspect-[16/9] overflow-hidden">
-
-                <img src="catdog.png" 
-
-                     class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-
+            <div class="aspect-[4/3] overflow-hidden">
+                <img src="catdog.jpg" 
+                     class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
             </div>
-
-            <div class="p-6 text-center">
-
-                <h2 class="hero-title text-2xl text-[#0369A1] mb-2">Album </h2>
-
-                <span class="inline-block bg-[#BAE6FD] text-[#0369A1] px-6 py-2 rounded-full text-xs font-bold shadow-sm">VIEW</span>
-
+            <div class="p-3 text-center">
+                <h2 class="hero-title text-xl text-[#0369A1] mb-1">Album </h2>
+                <span class="inline-block bg-[#BAE6FD] text-[#0369A1] px-5 py-1.5 rounded-full text-[10px] font-bold shadow-sm">VIEW</span>
             </div>
-
         </div>
-
-
 
         <div class="group cursor-pointer bg-white rounded-3xl shadow-lg overflow-hidden border-2 border-transparent hover:border-[#FBCFE8] transition duration-300" onclick="location.href='Diary.html'">
-
-            <div class="aspect-[16/9] overflow-hidden">
-
+            <div class="aspect-[4/3] overflow-hidden">
                 <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=80" 
-
-                     class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-
+                     class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
             </div>
-
-            <div class="p-6 text-center">
-
-                <h2 class="hero-title text-2xl text-[#9D174D] mb-2">Diary </h2>
-
-                <span class="inline-block bg-[#FBCFE8] text-[#9D174D] px-6 py-2 rounded-full text-xs font-bold shadow-sm">READ</span>
-
+            <div class="p-3 text-center">
+                <h2 class="hero-title text-xl text-[#9D174D] mb-1">Diary </h2>
+                <span class="inline-block bg-[#FBCFE8] text-[#9D174D] px-5 py-1.5 rounded-full text-[10px] font-bold shadow-sm">READ</span>
             </div>
-
         </div>
-
-
 
     </section>
 
-
-
     <footer class="py-8 bg-white text-center text-[10px] tracking-widest text-gray-400 rounded-t-[2rem]">
-
         ❤️ 我們的小日常 ✨ <br>
-
          &copy; 2026 Rainey and Kelly. 保留所有權利。
-
     </footer>
 
-
-
     <script>
-
         const startDate = new Date("2026-04-02T00:00:00").getTime();
-
         function updateTimer() {
-
             const now = new Date().getTime();
-
             const distance = now - startDate;
-
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-
             document.getElementById("days").innerText = days < 10 ? "0" + days : days;
-
         }
-
         updateTimer();
-
         setInterval(updateTimer, 3600000);
-
     </script>
-
 </body>
-
 </html>
