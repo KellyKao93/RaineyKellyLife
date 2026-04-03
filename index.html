@@ -40,7 +40,7 @@
         <div class="bg-white p-6 md:p-10 rounded-[2rem] shadow-lg text-center border-4 border-[#BAE6FD]">
             <h1 class="hero-title text-4xl md:text-6xl text-[#FF8A8A] mb-4 md:mb-6">LOVE</h1>
             <div class="flex flex-col items-center">
-                <span id="days" class="days-num text-6xl md:text-8xl text-gray-800 font-bold pulse-text">000</span>
+                <span id="days" class="days-num text-6xl md:text-8xl text-gray-800 font-bold pulse-text">00</span>
                 <p class="hero-title text-sm md:text-base mt-2 text-gray-400 tracking-widest uppercase">Days</p>
             </div>
             <p class="mt-8 md:mt-10 text-xs md:text-sm text-gray-400 font-medium tracking-wide">
@@ -64,7 +64,7 @@
 
         <div class="group cursor-pointer bg-white rounded-3xl shadow-lg overflow-hidden border-2 border-transparent hover:border-[#FBCFE8] transition duration-300" onclick="location.href='Diary.html'">
             <div class="aspect-[4/3] overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=80" 
+                <img src="diary.jpg" 
                      class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
             </div>
             <div class="p-3 text-center">
@@ -81,11 +81,14 @@
     </footer>
 
     <script>
-        const startDate = new Date("2026-04-02T00:00:00").getTime();
+        // 計算紀念日天數（以 2026/04/05 為準，依據你的 header 文字）
+        const startDate = new Date("2026-04-05T00:00:00").getTime();
         function updateTimer() {
             const now = new Date().getTime();
             const distance = now - startDate;
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            // 確保天數不為負數（在紀念日之前顯示 0）
+            let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            if (days < 0) days = 0;
             document.getElementById("days").innerText = days < 10 ? "0" + days : days;
         }
         updateTimer();
