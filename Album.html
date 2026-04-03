@@ -76,12 +76,12 @@
             card.innerHTML = `
                 <div class="aspect-[3/4] overflow-hidden rounded-2xl mb-4 bg-gray-100">
                     <img src="${i}.jpg" 
-                         alt="Memory ${i}" 
+                         alt="Photo ${i}" 
                          class="w-full h-full object-cover"
                          onerror="this.parentElement.parentElement.style.display='none';"> 
                 </div>
                 <div class="text-center">
-                    <span class="date-font text-gray-300 text-sm italic">#Memory ${i}</span>
+                    <span class="date-font text-gray-300 text-sm italic">#Photo ${i}</span>
                 </div>
             `;
             slider.appendChild(card);
