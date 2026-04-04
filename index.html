@@ -40,7 +40,7 @@
         <div class="bg-white p-6 md:p-10 rounded-[2rem] shadow-lg text-center border-4 border-[#BAE6FD]">
             <h1 class="hero-title text-4xl md:text-6xl text-[#FF8A8A] mb-4 md:mb-6">LOVE</h1>
             <div class="flex flex-col items-center">
-                <span id="days" class="days-num text-6xl md:text-8xl text-gray-800 font-bold pulse-text">00</span>
+                <span id="days" class="days-num text-6xl md:text-8xl text-gray-800 font-bold pulse-text">01</span>
                 <p class="hero-title text-sm md:text-base mt-2 text-gray-400 tracking-widest uppercase">Days</p>
             </div>
             <p class="mt-8 md:mt-10 text-xs md:text-sm text-gray-400 font-medium tracking-wide">
@@ -81,18 +81,25 @@
     </footer>
 
     <script>
-        // 計算紀念日天數（以 2026/04/05 為準，依據你的 header 文字）
+        // 設定起始日期
         const startDate = new Date("2026-04-05T00:00:00").getTime();
+        
         function updateTimer() {
             const now = new Date().getTime();
             const distance = now - startDate;
-            // 確保天數不為負數（在紀念日之前顯示 0）
-            let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            if (days < 0) days = 0;
+            
+            // 計算過往天數並 +1，讓第一天顯示為 01
+            let days = Math.floor(distance / (1000 * 60 * 60 * 24)) + 1;
+            
+            // 避免在日期還沒到時顯示奇怪的數字
+            if (days < 1) days = 1; 
+
+            // 顯示天數，如果小於 10 則補 0
             document.getElementById("days").innerText = days < 10 ? "0" + days : days;
         }
+        
         updateTimer();
-        setInterval(updateTimer, 3600000);
+        setInterval(updateTimer, 3600000); // 每一小時檢查一次
     </script>
 </body>
 </html>
